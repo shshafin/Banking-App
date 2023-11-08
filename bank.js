@@ -27,10 +27,18 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   // add input
   const withdrawAmount = document.getElementById("with");
   const newWithdrawAmount = Number(withdrawAmount.value);
+  if (isNaN(newWithdrawAmount)) {
+    alert("please input a valid number");
+    return;
+  }
 
   //   add balance
   const balance = document.getElementById("balance-num");
   const currentBalance = Number(balance.innerText);
+  if (newWithdrawAmount > currentBalance) {
+    alert("Baap er bank e eto taka nai");
+    return;
+  }
   const newBalance = currentBalance - newWithdrawAmount;
   balance.innerText = newBalance;
 
@@ -40,10 +48,6 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   //   clear deposit field
   withdrawAmount.value = " ";
 
-  if (newWithdrawAmount > currentBalance) {
-    alert("taka nai");
-    return;
-  }
   const updatedWithdrawValue = withdrawValue + newWithdrawAmount;
   withdraw.innerText = updatedWithdrawValue;
 
