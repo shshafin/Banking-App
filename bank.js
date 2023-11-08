@@ -37,7 +37,13 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   //   update on withdraw
   const withdraw = document.getElementById("withdraw-num");
   const withdrawValue = Number(withdraw.innerText);
+  //   clear deposit field
+  withdrawAmount.value = " ";
 
+  if (newWithdrawAmount > currentBalance) {
+    alert("taka nai");
+    return;
+  }
   const updatedWithdrawValue = withdrawValue + newWithdrawAmount;
   withdraw.innerText = updatedWithdrawValue;
 

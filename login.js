@@ -8,7 +8,7 @@ document.getElementById("login-btn").addEventListener("click", function () {
   const passValue = passField.value;
 
   // validity check
-  if (emailValue === "admin@gmail.com" && passValue === "1234") {
+  if (emailValue === "shafinsadnan08@gmail.com" && passValue === "1234") {
     // how to go other html page
     window.location.href = "bank.html";
   } else {
